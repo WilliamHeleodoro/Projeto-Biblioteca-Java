@@ -35,3 +35,18 @@ create table Reservas_Livros (
 	FOREIGN KEY (codigoLivro) REFERENCES Livros (codigoLivro),
 	FOREIGN KEY (codigoReserva) REFERENCES Reservas (codigoReserva)
 );
+
+
+CREATE SEQUENCE seq_pk_login;
+
+CREATE TABLE login (
+	id int PRIMARY KEY DEFAULT nextval('seq_pk_usuario'),
+	nome varchar(50),
+	email varchar(50),
+	img varchar(100),
+	login varchar(40),
+	senha varchar(40),
+	root boolean
+);
+
+INSERT INTO login (nome, email, login, senha, root) VALUES ('admin admin',	'admin@admin.com', 'admin', 'ee10c315eba2c75b403ea99136f5b48d', true);

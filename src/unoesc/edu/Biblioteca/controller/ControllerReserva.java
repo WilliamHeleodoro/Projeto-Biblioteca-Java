@@ -67,7 +67,7 @@ public class ControllerReserva {
 	
 	
 	public void delete(int id) {
-		
+		System.out.println("Tentou deletar");
 		this.reservaDao.deleteReserva(id);
 	
 		System.out.println("Removeu");

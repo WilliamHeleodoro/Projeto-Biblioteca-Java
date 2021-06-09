@@ -54,6 +54,9 @@
 							<p:column headerText="Livros">
 								<p:outputLabel value="#{livros.titulo}" />
 							</p:column>
+							<p:column headerText="Ano Publicação">
+								<p:outputLabel value="#{livros.anoPublic}" />
+							</p:column>
 
 							<!-- 							<p:column headerText="Preco"> -->
 							<!-- 								<p:outputLabel value="#{item.valor}" /> -->
@@ -62,10 +65,28 @@
 							<!-- 							<p:column headerText="qt"> -->
 							<!-- 								<p:outputLabel value="#{item.qt}" /> -->
 							<!-- 							</p:column> -->
-
+					
+							
 						</p:dataTable>
 					</div>
 				</p:rowExpansion>
+				<p:column width="20">
+				<h:form>
+				
+					<p:commandButton icon="pi pi-pencil"
+						action="#{reservaMB.edit(p.codigoReserva)}" update="panelCad" />
+						
+				</h:form>	
+			</p:column>
+			
+			<p:column width="20">
+				<h:form>
+			
+					<p:commandButton icon="pi pi-times" 
+						action="#{reservaMB.delete(p.codigoReserva)}" update="panel" />
+				
+				</h:form>
+			</p:column>
 			</p:dataTable>
 		</h:form>
 	</p:panel>
@@ -86,6 +107,10 @@
 
 				<h:outputLabel for="dtInicio" value="Data Inicial:" />
 				<p:datePicker id="dtInicio" value="#{reservaMB.user.dtInicio}"
+					showIcon="true" />
+					
+				<h:outputLabel for="dtFinal" value="Data Final:" />
+				<p:datePicker id="dtFinal" value="#{reservaMB.user.dtFinal}"
 					showIcon="true" />
 
 			
